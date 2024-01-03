@@ -121,8 +121,8 @@
     <Compile Include="Assets\SteamVR\InteractionSystem\Samples\Scripts\CustomSkeletonHelper.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_Camera.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Longbow\Scripts\ArrowHand.cs" />
-    <Compile Include="Assets\SteamVR\Input\SteamVR_Input_ActionScopes.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
+    <Compile Include="Assets\SteamVR\Input\SteamVR_Input_ActionScopes.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Core\Scripts\HandPhysics.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Core\Scripts\LinearAnimation.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Core\Scripts\LinearBlendshape.cs" />
@@ -139,8 +139,8 @@
     <Compile Include="Assets\SteamVR\Input\BehaviourUnityEvents\SteamVR_Behaviour_Pose_ConnectedChangedEvent.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Core\Scripts\VelocityEstimator.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Samples\Squishy\SquishyToy.cs" />
-    <Compile Include="Assets\SteamVR\InteractionSystem\Core\Scripts\LinearMapping.cs" />
     <Compile Include="Assets\SteamVR\InteractionSystem\Core\Scripts\Unparent.cs" />
+    <Compile Include="Assets\SteamVR\InteractionSystem\Core\Scripts\LinearMapping.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_Overlay.cs" />
     <Compile Include="Assets\SteamVR\Input\BehaviourUnityEvents\SteamVR_Behaviour_Skeleton_TrackingChangedEvent.cs" />
     <Compile Include="Assets\SteamVR\Input\SteamVR_Behaviour_SkeletonCustom.cs" />

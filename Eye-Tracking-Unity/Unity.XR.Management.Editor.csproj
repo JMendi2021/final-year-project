@@ -95,8 +95,8 @@
     <Compile Include="Library\PackageCache\com.unity.xr.management@4.4.0\Editor\EditorUtilities.cs" />
     <Compile Include="Library\PackageCache\com.unity.xr.management@4.4.0\Editor\Metadata\XRPackageMetadataStore.cs" />
     <Compile Include="Library\PackageCache\com.unity.xr.management@4.4.0\Editor\XRLoaderOrderUI.cs" />
-    <Compile Include="Library\PackageCache\com.unity.xr.management@4.4.0\Editor\AndroidManifest\ManifestRequirement.cs" />
     <Compile Include="Library\PackageCache\com.unity.xr.management@4.4.0\Editor\XRGeneralSettingsUpgrade.cs" />
+    <Compile Include="Library\PackageCache\com.unity.xr.management@4.4.0\Editor\AndroidManifest\ManifestRequirement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Library\PackageCache\com.unity.xr.management@4.4.0\Editor\Unity.XR.Management.Editor.asmdef" />

@@ -247,8 +247,8 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.2.0\Editor\PlasticSCM\AssetMenu\AssetsSelection.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.2.0\Editor\PlasticSCM\Hub\ParseArguments.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.2.0\Editor\PlasticSCM\Configuration\EncryptionConfigurationDialog.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.2.0\Editor\PlasticSCM\UI\StatusBar\IncomingChangesNotification.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.2.0\Editor\PlasticSCM\VCSPlugin.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.2.0\Editor\PlasticSCM\UI\StatusBar\IncomingChangesNotification.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.2.0\Editor\PlasticSCM\Views\CreateWorkspace\Dialogs\RepositoryExplorerDialog.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.2.0\Editor\PlasticSCM\Views\CreateWorkspace\Dialogs\RepositoriesListHeaderState.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.2.0\Editor\PlasticSCM\Views\Changesets\DateFilter.cs" />
