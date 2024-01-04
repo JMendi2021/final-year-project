@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObstacleMovement : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] float speed = 2f;
+    [SerializeField] public float speed;
     private const float UnityUnitsPerMeter = 1f;
 
     void Update()

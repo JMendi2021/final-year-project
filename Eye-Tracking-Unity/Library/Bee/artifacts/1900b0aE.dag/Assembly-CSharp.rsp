@@ -375,6 +375,8 @@
 "Assets/QuickOutline/Scripts/Outline.cs"
 "Assets/Scripts/ObstacleMovement.cs"
 "Assets/Scripts/PlayerMovement.cs"
+"Assets/Scripts/SegmentController.cs"
+"Assets/Scripts/TestController.cs"
 -langversion:9.0
 /unsafe+
 /deterministic
