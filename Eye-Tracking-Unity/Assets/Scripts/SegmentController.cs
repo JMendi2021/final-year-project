@@ -7,8 +7,17 @@ public class SegmentController : MonoBehaviour
     [SerializeField] public float objectSpeed;
     [SerializeField] GameObject[] modelPrefabs;
     [SerializeField] GameObject marker;
+    [SerializeField] GameObject player;
+    [SerializeField] public bool isRandomSpeed = false;
+    [SerializeField] public float minSpeed;
+    [SerializeField] public float maxSpeed;
 
+    private GameObject spawnedObject;
 
+    void Update()
+    {
+
+    }
 
 
     // This is responsible for when the user gazes at either Marker or Obstacle in a specific order
@@ -20,11 +29,14 @@ public class SegmentController : MonoBehaviour
     // Depending on the Time-To-Contact Controller, this spawns the approaching obstacle with a random mesh
     public void Spawn()
     {
-        int index = Random.Range(0, modelPrefabs.Length);
-        GameObject spawnedObject = Instantiate(modelPrefabs[index], transform.position, Quaternion.identity);
-        spawnedObject.transform.Rotate(Vector3.up, 90.0f);
-        ObstacleMovement obstacle = spawnedObject.GetComponent<ObstacleMovement>();
-        obstacle.speed = objectSpeed;
+        if (spawnedObject == null)
+        {
+            int index = Random.Range(0, modelPrefabs.Length);
+            spawnedObject = Instantiate(modelPrefabs[index], transform.position, Quaternion.identity);
+            // spawnedObject.transform.Rotate(Vector3.up, 90.0f);
+            ObstacleMovement obstacle = spawnedObject.GetComponent<ObstacleMovement>();
+            obstacle.speed = objectSpeed;
+        }
 
     }
 }

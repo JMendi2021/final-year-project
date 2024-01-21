@@ -5,25 +5,35 @@ using UnityEngine;
 public class ObstacleMovement : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] public float speed;
-    private const float UnityUnitsPerMeter = 1f;
+    [SerializeField] public float speed = 10f;
+    [SerializeField] float UnityUnitsPerMeter = 1f;
+    [SerializeField] float activationXPosition = 25f;
+    private CapsuleCollider _capsuleCollider;
 
+    void Start()
+    {
+        _capsuleCollider = gameObject.GetComponent<CapsuleCollider>();
+        _capsuleCollider.enabled = false;
+    }
     void Update()
     {
         Move();
-
-        // Destroys the object once it passes the playzone lower bounds
-        if (gameObject.transform.position.x > 40)
+        if (transform.position.x > activationXPosition)
         {
-            Destroy(gameObject);
+            _capsuleCollider.enabled = true;
+            Debug.Log("Collider Enabled at x-position: " + transform.position.x);
         }
     }
+
+    // void Update() {
+    //     Move();
+    // }
 
     void Move()
     {
         // Convert speed from meters per second to Unity units per second
         float speedInUnityUnitsPerSecond = speed / UnityUnitsPerMeter;
         // Move the object down the lane
-        transform.Translate(Vector3.forward * speedInUnityUnitsPerSecond * Time.deltaTime);
+        transform.Translate(Vector3.right * speedInUnityUnitsPerSecond * Time.deltaTime);
     }
 }
