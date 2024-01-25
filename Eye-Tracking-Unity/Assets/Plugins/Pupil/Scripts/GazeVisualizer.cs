@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Drawing.Text;
 using UnityEngine;
 
 namespace PupilLabs
@@ -13,6 +14,7 @@ namespace PupilLabs
         [Range(0f, 1f)]
         public float confidenceThreshold = 0.6f;
         public bool binocularOnly = true;
+
 
         [Header("Projected Visualization")]
         public Transform projectionMarker;
@@ -172,14 +174,23 @@ namespace PupilLabs
             Vector3 origin = gazeOrigin.position;
             Vector3 direction = gazeOrigin.TransformDirection(localGazeDirection);
 
+            //Modified Code
             if (Physics.SphereCast(origin, sphereCastRadius, direction, out RaycastHit hit, Mathf.Infinity))
             {
-                Debug.DrawRay(origin, direction * hit.distance, Color.yellow);
+                Debug.DrawRay(origin, direction * hit.distance, Color.red);
+
+                if (hit.collider.CompareTag("Obstacle"))
+                {
+                    //Debug.Log("Obstacle detected.");
+                    hit.collider.gameObject.SendMessage("OnSphereCastHit", SendMessageOptions.DontRequireReceiver);
+
+                }
 
                 projectionMarker.position = hit.point;
 
                 gazeDirectionMarker.position = origin + direction * hit.distance;
                 gazeDirectionMarker.LookAt(origin);
+
 
                 if (errorAngleBasedMarkerRadius)
                 {

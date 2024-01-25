@@ -21,7 +21,11 @@ public class ObstacleMovement : MonoBehaviour
         if (transform.position.x > activationXPosition)
         {
             _capsuleCollider.enabled = true;
-            Debug.Log("Collider Enabled at x-position: " + transform.position.x);
+            // Debug.Log("Collider Enabled at x-position: " + transform.position.x);
+        }
+
+        if (transform.position.x > 40) {
+            Destroy(gameObject);
         }
     }
 
