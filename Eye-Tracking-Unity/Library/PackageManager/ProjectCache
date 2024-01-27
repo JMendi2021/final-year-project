@@ -5,34 +5,34 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638408638449305814
-    m_Hash: 2509417303
+      ticks: 638419224448488619
+    m_Hash: 1245978900
   m_LockFileStatus:
     m_FilePath: C:/Users/jhund/Final Year Project/final-year-project/Eye-Tracking-Unity/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638408638449348305
-    m_Hash: 3468474307
+      ticks: 638419224448538644
+    m_Hash: 845382754
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus:
-  - m_FilePath: C:\Users\jhund\Final Year Project\final-year-project\Eye-Tracking-Unity\Assets\SteamVR\OpenVRUnityXRPackage\Editor\com.valvesoftware.unity.openvr-1.1.4.tgz/package.json
+  - m_FilePath: C:\Users\jhund\Final Year Project\final-year-project\Eye-Tracking-Unity\Assets\SteamVR\OpenVRUnityXRPackage\Editor\com.valvesoftware.unity.openvr-1.2.1.tgz/package.json
     m_PathExists: 0
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
       ticks: 0
     m_Hash: 0
-  - m_FilePath: C:\Users\jhund\Final Year Project\final-year-project\Eye-Tracking-Unity\Assets\SteamVR\OpenVRUnityXRPackage\Editor\com.valvesoftware.unity.openvr-1.1.4.tgz
+  - m_FilePath: C:\Users\jhund\Final Year Project\final-year-project\Eye-Tracking-Unity\Assets\SteamVR\OpenVRUnityXRPackage\Editor\com.valvesoftware.unity.openvr-1.2.1.tgz
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637497179250000000
-    m_Hash: 2919789393
+      ticks: 638411198350000000
+    m_Hash: 4235084898
 m_ProjectPath: C:/Users/jhund/Final Year Project/final-year-project/Eye-Tracking-Unity/Packages
 m_EditorVersion: 2022.3.13f1 (5f90a5ebde0f)
 m_ResolvedPackages:
@@ -387,6 +387,7 @@ m_ResolvedPackages:
     - 3.0.4
     - 3.0.5
     - 3.0.6
+    - 3.0.7
     - 3.2.0-pre.1
     - 3.2.0-pre.2
     - 3.2.0-pre.3
@@ -398,6 +399,7 @@ m_ResolvedPackages:
     - 4.0.0-pre.2
     compatible:
     - 3.0.6
+    - 3.0.7
     - 3.2.0-pre.1
     - 3.2.0-pre.2
     - 3.2.0-pre.3
@@ -407,7 +409,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.7
     - 4.0.0-pre.1
     - 4.0.0-pre.2
-    recommended: 3.0.6
+    recommended: 3.0.7
     deprecated: []
   dependencies:
   - name: com.unity.ugui
@@ -1306,12 +1308,12 @@ m_ResolvedPackages:
     deprecationMessage: 
   isDeprecated: 0
   deprecationMessage: 
-- packageId: com.valvesoftware.unity.openvr@file:C:\Users\jhund\Final Year Project\final-year-project\Eye-Tracking-Unity\Assets\SteamVR\OpenVRUnityXRPackage\Editor\com.valvesoftware.unity.openvr-1.1.4.tgz
+- packageId: com.valvesoftware.unity.openvr@file:C:\Users\jhund\Final Year Project\final-year-project\Eye-Tracking-Unity\Assets\SteamVR\OpenVRUnityXRPackage\Editor\com.valvesoftware.unity.openvr-1.2.1.tgz
   testable: 0
   isDirectDependency: 1
-  version: 1.1.4
+  version: 1.2.1
   source: 6
-  resolvedPath: C:\Users\jhund\Final Year Project\final-year-project\Eye-Tracking-Unity\Library\PackageCache\com.valvesoftware.unity.openvr@3ee6c452bc34
+  resolvedPath: C:\Users\jhund\Final Year Project\final-year-project\Eye-Tracking-Unity\Library\PackageCache\com.valvesoftware.unity.openvr@970ac47786c4
   assetPath: Packages/com.valvesoftware.unity.openvr
   name: com.valvesoftware.unity.openvr
   displayName: OpenVR XR Plugin
@@ -3371,9 +3373,11 @@ m_ResolvedPackages:
     - 4.3.1
     - 4.3.3
     - 4.4.0
+    - 4.4.1
     compatible:
     - 4.4.0
-    recommended: 4.4.0
+    - 4.4.1
+    recommended: 4.4.1
     deprecated: []
   dependencies:
   - name: com.unity.modules.subsystems
@@ -3694,6 +3698,7 @@ m_ResolvedPackages:
     - 2.3.0-pre.1
     - 2.3.0-pre.2
     - 2.3.0-pre.3
+    - 2.3.0
     - 2.4.0-exp.1
     - 2.4.0-exp.2
     - 2.4.0-exp.3
@@ -3702,6 +3707,7 @@ m_ResolvedPackages:
     - 2.3.0-pre.1
     - 2.3.0-pre.2
     - 2.3.0-pre.3
+    - 2.3.0
     - 2.4.0-exp.1
     - 2.4.0-exp.2
     - 2.4.0-exp.3
@@ -3792,9 +3798,11 @@ m_ResolvedPackages:
     - 1.2.5
     - 1.2.6
     - 1.3.1
+    - 1.3.2
     compatible:
     - 1.2.6
     - 1.3.1
+    - 1.3.2
     recommended: 1.2.6
     deprecated: []
   dependencies: []
@@ -4287,6 +4295,7 @@ m_ResolvedPackages:
     - 1.4.0
     - 1.4.1
     - 1.4.2
+    - 1.4.3
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -4305,6 +4314,7 @@ m_ResolvedPackages:
     - 1.4.0
     - 1.4.1
     - 1.4.2
+    - 1.4.3
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12

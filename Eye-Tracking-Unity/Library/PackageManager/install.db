@@ -3,10 +3,10 @@
   "packages": {
     "com.valvesoftware.unity.openvr": {
       "tarball": {
-        "hash": "3ee6c452bc34",
-        "mtime": 1614121125000,
-        "size": 16210619,
-        "localPath": "C:\\Users\\jhund\\Final Year Project\\final-year-project\\Eye-Tracking-Unity\\Assets\\SteamVR\\OpenVRUnityXRPackage\\Editor\\com.valvesoftware.unity.openvr-1.1.4.tgz"
+        "hash": "970ac47786c4",
+        "mtime": 1705523035000,
+        "size": 19523367,
+        "localPath": "C:\\Users\\jhund\\Final Year Project\\final-year-project\\Eye-Tracking-Unity\\Assets\\SteamVR\\OpenVRUnityXRPackage\\Editor\\com.valvesoftware.unity.openvr-1.2.1.tgz"
       }
     }
   }

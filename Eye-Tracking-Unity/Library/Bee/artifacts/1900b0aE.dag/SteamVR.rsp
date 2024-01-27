@@ -120,6 +120,7 @@
 -define:USE_INPUT_SYSTEM_POSE_CONTROL
 -define:OPENVR_XR_API
 -define:UNITY_LEGACY_INPUT_HELPERS
+-define:UNITY_UGUI_UI
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"Assets/Plugins/Pupil/3rd-party/AsyncIO.dll"
@@ -508,8 +509,6 @@
 "Assets/SteamVR/InteractionSystem/Teleport/Scripts/TeleportMarkerBase.cs"
 "Assets/SteamVR/InteractionSystem/Teleport/Scripts/TeleportPoint.cs"
 "Assets/SteamVR/InteractionSystem/Teleport/Scripts/TeleportURPHelper.cs"
-"Assets/SteamVR/OpenVRUnityXRPackage/Editor/OpenVRPackageInstaller.cs"
-"Assets/SteamVR/OpenVRUnityXRPackage/Editor/OpenVRSimpleJSON.cs"
 "Assets/SteamVR/Plugins/openvr_api.cs"
 "Assets/SteamVR/Scripts/SteamVR.cs"
 "Assets/SteamVR/Scripts/SteamVR_Behaviour.cs"

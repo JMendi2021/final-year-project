@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Time to Contact.unity
+- path: Assets/Scenes/3D Interception.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -1068,9 +1068,9 @@
     <ProjectReference Include="Unity.XR.OpenXR.Features.MetaQuestSupport.Editor.csproj" />
     <ProjectReference Include="Unity.XR.Management.csproj" />
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Editor.csproj" />
+    <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj" />
     <ProjectReference Include="Unity.XR.Hands.csproj" />
     <ProjectReference Include="SteamVR.csproj" />
-    <ProjectReference Include="SteamVR_Actions.csproj" />
     <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj" />
     <ProjectReference Include="Unity.Rider.Editor.csproj" />
     <ProjectReference Include="Unity.XR.OpenXR.Features.ConformanceAutomation.csproj" />
@@ -1086,7 +1086,6 @@
     <ProjectReference Include="Unity.XR.Management.Editor.csproj" />
     <ProjectReference Include="Unity.XR.CoreUtils.Editor.csproj" />
     <ProjectReference Include="Unity.TextMeshPro.csproj" />
-    <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj" />
     <ProjectReference Include="Unity.VSCode.Editor.csproj" />
     <ProjectReference Include="Unity.XR.OpenXR.Features.OculusQuestSupport.csproj" />
     <ProjectReference Include="Unity.XR.Oculus.Editor.csproj" />
@@ -1104,6 +1103,7 @@
     <ProjectReference Include="UnityEngine.SpatialTracking.csproj" />
     <ProjectReference Include="Unity.XR.Hands.Editor.csproj" />
     <ProjectReference Include="UnityEditor.XR.LegacyInputHelpers.csproj" />
+    <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj" />
     <ProjectReference Include="SteamVR_Editor.csproj" />
     <ProjectReference Include="Unity.VisualScripting.Flow.Editor.csproj" />
     <ProjectReference Include="Unity.Timeline.csproj" />
@@ -1113,13 +1113,12 @@
     <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj" />
     <ProjectReference Include="Unity.XR.OpenXR.Editor.csproj" />
     <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.csproj" />
-    <ProjectReference Include="Unity.XR.Hands.Samples.VisualizerSample.csproj" />
     <ProjectReference Include="Unity.VisualScripting.State.Editor.csproj" />
-    <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj" />
     <ProjectReference Include="Unity.Mathematics.csproj" />
     <ProjectReference Include="Unity.TextMeshPro.Editor.csproj" />
     <ProjectReference Include="Unity.XR.OpenXR.Features.RuntimeDebugger.Editor.csproj" />
     <ProjectReference Include="Unity.VisualScripting.State.csproj" />
+    <ProjectReference Include="Unity.XR.Hands.Samples.VisualizerSample.csproj" />
   </ItemGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <ItemGroup>
