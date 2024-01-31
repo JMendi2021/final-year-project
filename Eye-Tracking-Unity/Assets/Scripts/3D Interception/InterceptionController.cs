@@ -22,13 +22,40 @@ public class InterceptionController : MonoBehaviour
     [SerializeField] int totalObstacles;
 
     [Header("Pupil Lab")]
-    [SerializeField] RecordingController pupilRecord;
+    [SerializeField] bool enablePupilLab = true; // This is to test the application without the eye-trackers enabled.
 
-    
+    [SerializeField] GameObject gazeTracker;
 
-    private Boolean _running = false;
+
+
+
+    private bool _running = false;
     // private Boolean _calibrated = true;
     private int _spawnedObstacles = 0;
+    private RecordingController pupilRecord;
+
+
+    private void Start()
+    {
+        if (!enablePupilLab)
+        {
+            gazeTracker.SetActive(false);
+            Debug.Log("Pupil Lab has been disabled.");
+        }
+        else
+        {
+            gazeTracker.SetActive(true);
+            if (gazeTracker == null)
+            {
+                Debug.LogWarning("Gaze Tracker object not found, please attach gameObject to script");
+            }
+            else
+            {
+                pupilRecord = gazeTracker.GetComponent<RecordingController>();
+                Debug.Log("Pupil Lab has been enabled.");
+            }
+        }
+    }
 
 
     // The experiment should begin once everything has been calibrated and the enter key has been pressed.
@@ -40,7 +67,11 @@ public class InterceptionController : MonoBehaviour
             if (!_running)
             {
                 Debug.Log("Beginning Experiment");
-                pupilRecord.StartRecording();
+                if (pupilRecord != null)
+                {
+                    pupilRecord.StartRecording();
+                }
+
                 RunRandom();
             }
             else
@@ -66,7 +97,12 @@ public class InterceptionController : MonoBehaviour
         yield return new WaitForSeconds(10f);
 
         Debug.Log("Experiment has finished, resetting.");
-        pupilRecord.StopRecording();
+
+        if (pupilRecord != null)
+        {
+            pupilRecord.StopRecording();
+        }
+
         _spawnedObstacles = 0;
         _running = false;
     }

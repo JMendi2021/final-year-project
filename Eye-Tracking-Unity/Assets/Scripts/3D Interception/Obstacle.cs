@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using PupilLabs;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Obstacle : MonoBehaviour
 {
 
     [SerializeField] public float speed;
-    private float _maxSegmentDistance = 0.5f;
+    [SerializeField] InputActionReference trigger;
+    private float _maxSegmentDistance = -2.0f;
     private float _minMarkerDistance = 2.1f;
     private float _maxMarkerDistance = 1.0f;
-
-    [SerializeField] InputActionReference trigger;
 
 
     // Update is called once per frame
