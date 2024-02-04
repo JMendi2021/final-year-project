@@ -5,6 +5,7 @@ using PupilLabs;
 using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.TestTools;
+using UnityEngine.TextCore;
 
 public class InterceptionController : MonoBehaviour
 {
@@ -23,8 +24,10 @@ public class InterceptionController : MonoBehaviour
 
     [Header("Pupil Lab")]
     [SerializeField] bool enablePupilLab = true; // This is to test the application without the eye-trackers enabled.
-
+    [SerializeField] bool enableVisualiser = false;
     [SerializeField] GameObject gazeTracker;
+    [SerializeField] GameObject gazeVisualiser;
+
 
 
 
@@ -53,6 +56,12 @@ public class InterceptionController : MonoBehaviour
             {
                 pupilRecord = gazeTracker.GetComponent<RecordingController>();
                 Debug.Log("Pupil Lab has been enabled.");
+
+                // TO DO - Enable/Disable Gaze Visualiser by getting the GameObject 'GazeVisualizer' and use SetActive
+                if (!enableVisualiser) {
+                    Debug.Log("Visualiser has been disabled.");
+                    gazeVisualiser.SetActive(false);
+                }
             }
         }
     }
@@ -69,6 +78,7 @@ public class InterceptionController : MonoBehaviour
                 Debug.Log("Beginning Experiment");
                 if (pupilRecord != null)
                 {
+                    Debug.Log("Pupil Capture is now recording");
                     pupilRecord.StartRecording();
                 }
 
@@ -100,6 +110,7 @@ public class InterceptionController : MonoBehaviour
 
         if (pupilRecord != null)
         {
+            Debug.Log("Pupil Capture has stopped recording");
             pupilRecord.StopRecording();
         }
 

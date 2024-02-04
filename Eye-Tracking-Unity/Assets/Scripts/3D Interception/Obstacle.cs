@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing.Design;
 using PupilLabs;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,17 +12,24 @@ public class Obstacle : MonoBehaviour
 
     [SerializeField] public float speed;
     [SerializeField] InputActionReference trigger;
+    [SerializeField] Material interceptedMaterial;
+    [SerializeField] Renderer targetRenderer;
     private float _maxSegmentDistance = -2.0f;
     private float _minMarkerDistance = 2.1f;
     private float _maxMarkerDistance = 1.0f;
+
+    private bool _canMove = true;
 
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(-1 * Vector3.forward * speed * Time.deltaTime); // The obstacle should move towards the player
-        OnMarker();
-        PassBoundry();
+        if (_canMove)
+        {
+            transform.Translate(-1 * Vector3.forward * speed * Time.deltaTime); // The obstacle should move towards the player
+            OnMarker();
+            PassBoundry();
+        }
     }
 
     // This performs the logic if an object is within the Interception Zone and the Space or Left Controller Trigger is pressed.
@@ -29,15 +37,8 @@ public class Obstacle : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) || trigger.action.triggered)
         {
-            Debug.Log("Intercept Button Pressed!");
-            if (transform.position.z > _maxMarkerDistance && transform.position.z < _minMarkerDistance)
-            {
-                Debug.Log("Object intercepted!");
-                Destroy(gameObject);
-            }
+            Intercepted();
         }
-
-
     }
 
     // Checks if the object exceeds pass the segment boundry
@@ -49,5 +50,22 @@ public class Obstacle : MonoBehaviour
         }
     }
 
+    private void Intercepted()
+    {
+        Debug.Log("Intercept Button Pressed!");
+        if (transform.position.z > _maxMarkerDistance && transform.position.z < _minMarkerDistance)
+        {
+            Debug.Log("Object intercepted!");
+            targetRenderer.material = interceptedMaterial;
+            _canMove = false;
+            StartCoroutine(DelayDestroy());
+        }
+    }
+
+    IEnumerator DelayDestroy()
+    {
+        yield return new WaitForSeconds(1.0f);
+        Destroy(gameObject);
+    }
 
 }
