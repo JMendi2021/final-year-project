@@ -24,18 +24,20 @@ public class InterceptionController : MonoBehaviour
 
     [Header("Pupil Lab")]
     [SerializeField] bool enablePupilLab = true; // This is to test the application without the eye-trackers enabled.
-    [SerializeField] bool enableVisualiser = false;
     [SerializeField] GameObject gazeTracker;
-    [SerializeField] GameObject gazeVisualiser;
+    [SerializeField] GameObject calibrationWall;
 
 
 
-
-
+    // public int _numOfInterception = 0;
+    // public int _numbOfButtonPressed = 0;
     private bool _running = false;
     // private Boolean _calibrated = true;
     private int _spawnedObstacles = 0;
-    private RecordingController pupilRecord;
+
+    private RecordingController _pupilRecord;
+    private bool _calWall = true;
+
 
 
     private void Start()
@@ -43,6 +45,7 @@ public class InterceptionController : MonoBehaviour
         if (!enablePupilLab)
         {
             gazeTracker.SetActive(false);
+            calibrationWall.SetActive(false);
             Debug.Log("Pupil Lab has been disabled.");
         }
         else
@@ -54,14 +57,9 @@ public class InterceptionController : MonoBehaviour
             }
             else
             {
-                pupilRecord = gazeTracker.GetComponent<RecordingController>();
+                _pupilRecord = gazeTracker.GetComponent<RecordingController>();
+                calibrationWall.SetActive(true);
                 Debug.Log("Pupil Lab has been enabled.");
-
-                // TO DO - Enable/Disable Gaze Visualiser by getting the GameObject 'GazeVisualizer' and use SetActive
-                if (!enableVisualiser) {
-                    Debug.Log("Visualiser has been disabled.");
-                    gazeVisualiser.SetActive(false);
-                }
             }
         }
     }
@@ -75,20 +73,50 @@ public class InterceptionController : MonoBehaviour
         {
             if (!_running)
             {
-                Debug.Log("Beginning Experiment");
-                if (pupilRecord != null)
+                if (_calWall)
                 {
-                    Debug.Log("Pupil Capture is now recording");
-                    pupilRecord.StartRecording();
+                    Debug.Log("Please hide the Callibration wall by pressing H first.");
                 }
+                else
+                {
+                    Debug.Log("Beginning Experiment");
+                    if (_pupilRecord != null)
+                    {
+                        Debug.Log("Pupil Capture is now recording");
+                        _pupilRecord.StartRecording();
+                    }
 
-                RunRandom();
+                    RunRandom();
+                }
             }
             else
             {
                 Debug.Log("Please wait until the current experiment is over.");
             }
             // Call to get ready
+        }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            if (_running)
+            {
+                Debug.Log("Please wait until experiment is over");
+            }
+            else
+            {
+                if (!_calWall)
+                {
+                    Debug.Log("Hiding experiment for Calibration");
+                    calibrationWall.SetActive(true);
+                }
+                else
+                {
+                    Debug.Log("Showing experiment");
+                    calibrationWall.SetActive(false);
+                }
+                _calWall = !_calWall;
+            }
+
         }
     }
 
@@ -108,12 +136,13 @@ public class InterceptionController : MonoBehaviour
 
         Debug.Log("Experiment has finished, resetting.");
 
-        if (pupilRecord != null)
+        if (_pupilRecord != null)
         {
             Debug.Log("Pupil Capture has stopped recording");
-            pupilRecord.StopRecording();
+            _pupilRecord.StopRecording();
         }
 
+        // ReturnResults();
         _spawnedObstacles = 0;
         _running = false;
     }
@@ -139,5 +168,11 @@ public class InterceptionController : MonoBehaviour
             return null;
         }
     }
+
+    // private void ReturnResults()
+    // {
+    //     float accuracy = _numOfInterception / _numbOfButtonPressed;
+    //     Debug.Log($"The user has intercepted {_numOfInterception} out of {totalObstacles} \n with {accuracy.ToString("F2")}");
+    // }
 
 }
