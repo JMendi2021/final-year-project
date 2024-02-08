@@ -26,6 +26,8 @@ public class InterceptionController : MonoBehaviour
     [SerializeField] bool enablePupilLab = true; // This is to test the application without the eye-trackers enabled.
     [SerializeField] GameObject gazeTracker;
     [SerializeField] GameObject calibrationWall;
+    [SerializeField] AnnotationPublisher annotationPublisher;
+
 
 
 
@@ -126,10 +128,20 @@ public class InterceptionController : MonoBehaviour
         while (_spawnedObstacles < totalObstacles)
         {
             ChooseRandomSegment().ActivateSpawner(obstacleSpeed);
+            if (enablePupilLab)
+            {
+                annotationPublisher.SendAnnotation("Object Spawned");
+            }
             _spawnedObstacles++;
             yield return new WaitForSeconds(spawnDelay);
         }
 
+        if (enablePupilLab)
+        {
+            annotationPublisher.SendAnnotation("Spawning Finished");
+
+        }
+        
         Debug.Log("Spawning Finished.");
 
         yield return new WaitForSeconds(10f);

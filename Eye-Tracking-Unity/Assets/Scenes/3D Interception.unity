@@ -438,6 +438,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5759569962967085356, guid: a9383f0f3aa209a4eb0119d3ad1daa1d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 502589684}
+    - targetCorrespondingSourceObject: {fileID: 5759569962967085356, guid: a9383f0f3aa209a4eb0119d3ad1daa1d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 502589685}
     - targetCorrespondingSourceObject: {fileID: 5759569964053480823, guid: a9383f0f3aa209a4eb0119d3ad1daa1d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 502589678}
@@ -545,6 +548,20 @@ MonoBehaviour:
   initialHeight: 480
   maxFrameRate: 90
   pauseStreaming: 0
+--- !u!114 &502589685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502589677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be52e107d2937c840832e4d1684c4f86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requestCtrl: {fileID: 502589672}
+  timeSync: {fileID: 21143059}
 --- !u!1001 &631636437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1564,6 +1581,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: -- XR INTERACTION --
       objectReference: {fileID: 0}
+    - target: {fileID: 495023236038521802, guid: 42130ae50deb12b488fb333b721fe639, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780532957456213550, guid: 42130ae50deb12b488fb333b721fe639, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5360958530442635595, guid: 42130ae50deb12b488fb333b721fe639, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1602,6 +1627,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5360958530442635595, guid: 42130ae50deb12b488fb333b721fe639, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8331352516202370035, guid: 42130ae50deb12b488fb333b721fe639, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8604610911622295111, guid: 42130ae50deb12b488fb333b721fe639, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1677,6 +1710,10 @@ PrefabInstance:
       propertyPath: _numOfInterception
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7633044714341874283, guid: 1c88817f948aa1a4b8c6a5025624bb1f, type: 3}
+      propertyPath: annotationPublisher
+      value: 
+      objectReference: {fileID: 502589685}
     - target: {fileID: 7633044714341874283, guid: 1c88817f948aa1a4b8c6a5025624bb1f, type: 3}
       propertyPath: _numbOfButtonPressed
       value: 0
