@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7633044714341874283}
   m_Layer: 0
   m_Name: 3D Interception Controller
-  m_TagString: Untagged
+  m_TagString: Interception Controller
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,9 +52,7 @@ MonoBehaviour:
   - {fileID: 0}
   obstacleSpeed: 6
   spawnDelay: 4
-  totalObstacles: 10
-  enablePupilLab: 0
+  totalObstacles: 5
+  enablePupilLab: 1
   gazeTracker: {fileID: 0}
-  calibrationWall: {fileID: 0}
-  _numOfInterception: 0
-  _numbOfButtonPressed: 0
+  annotationPublisher: {fileID: 0}

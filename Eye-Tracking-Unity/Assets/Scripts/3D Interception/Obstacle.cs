@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing.Design;
+using System.Security.Cryptography.X509Certificates;
 using PupilLabs;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -15,13 +16,20 @@ public class Obstacle : MonoBehaviour
     [SerializeField] InputActionReference trigger;
     [SerializeField] Material interceptedMaterial;
     [SerializeField] Renderer targetRenderer;
-    [SerializeField] InterceptionController ic;
+    // [SerializeField] InterceptionController ic;
+
     private float _maxSegmentDistance = -2.0f;
-    private float _minMarkerDistance = 2.1f;
+    private float _minMarkerDistance = 2.5f;
     private float _maxMarkerDistance = 1.0f;
 
     private bool _canMove = true;
+    private InterceptionController ic;
 
+
+    void Start()
+    {
+        ic = FindObjectOfType<InterceptionController>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -55,13 +63,11 @@ public class Obstacle : MonoBehaviour
     private void Intercepted()
     {
         Debug.Log("Intercept Button Pressed!");
-        // ic._numbOfButtonPressed += 1;
         if (transform.position.z > _maxMarkerDistance && transform.position.z < _minMarkerDistance)
         {
-            Debug.Log("Object intercepted!");
-            // ic._numOfInterception += 1;
             targetRenderer.material = interceptedMaterial;
             _canMove = false;
+            ic.Intercepted();
             StartCoroutine(DelayDestroy());
         }
     }

@@ -133,7 +133,6 @@ MonoBehaviour:
   trigger: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   interceptedMaterial: {fileID: 2100000, guid: e0471b940b4605d40b0da6149e84dfc1, type: 2}
   targetRenderer: {fileID: 8982184840335583120}
-  ic: {fileID: 7633044714341874283, guid: 1c88817f948aa1a4b8c6a5025624bb1f, type: 3}
 --- !u!1 &2399562281643026018
 GameObject:
   m_ObjectHideFlags: 0

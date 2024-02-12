@@ -25,8 +25,8 @@ public class InterceptionController : MonoBehaviour
     [Header("Pupil Lab")]
     [SerializeField] bool enablePupilLab = true; // This is to test the application without the eye-trackers enabled.
     [SerializeField] GameObject gazeTracker;
-    [SerializeField] GameObject calibrationWall;
-    [SerializeField] AnnotationPublisher annotationPublisher;
+
+
 
 
 
@@ -34,11 +34,11 @@ public class InterceptionController : MonoBehaviour
     // public int _numOfInterception = 0;
     // public int _numbOfButtonPressed = 0;
     private bool _running = false;
-    // private Boolean _calibrated = true;
     private int _spawnedObstacles = 0;
 
+    // Pupil Lab Private Vars
     private RecordingController _pupilRecord;
-    private bool _calWall = true;
+    private AnnotationPublisher _pupilAnnotate;
 
 
 
@@ -47,7 +47,6 @@ public class InterceptionController : MonoBehaviour
         if (!enablePupilLab)
         {
             gazeTracker.SetActive(false);
-            calibrationWall.SetActive(false);
             Debug.Log("Pupil Lab has been disabled.");
         }
         else
@@ -60,7 +59,7 @@ public class InterceptionController : MonoBehaviour
             else
             {
                 _pupilRecord = gazeTracker.GetComponent<RecordingController>();
-                calibrationWall.SetActive(true);
+                _pupilAnnotate = gazeTracker.GetComponent<AnnotationPublisher>();
                 Debug.Log("Pupil Lab has been enabled.");
             }
         }
@@ -75,86 +74,81 @@ public class InterceptionController : MonoBehaviour
         {
             if (!_running)
             {
-                if (_calWall)
-                {
-                    Debug.Log("Please hide the Callibration wall by pressing H first.");
-                }
-                else
-                {
-                    Debug.Log("Beginning Experiment");
-                    if (_pupilRecord != null)
-                    {
-                        Debug.Log("Pupil Capture is now recording");
-                        _pupilRecord.StartRecording();
-                    }
-
-                    RunRandom();
-                }
+                Debug.Log("Beginning Experiment");
+                RunRandom();
             }
             else
             {
                 Debug.Log("Please wait until the current experiment is over.");
             }
-            // Call to get ready
-        }
-
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            if (_running)
-            {
-                Debug.Log("Please wait until experiment is over");
-            }
-            else
-            {
-                if (!_calWall)
-                {
-                    Debug.Log("Hiding experiment for Calibration");
-                    calibrationWall.SetActive(true);
-                }
-                else
-                {
-                    Debug.Log("Showing experiment");
-                    calibrationWall.SetActive(false);
-                }
-                _calWall = !_calWall;
-            }
-
         }
     }
 
     // This will cause the obstacles to spawn at a given rate up to a total number of times
     IEnumerator BeginExperiment()
     {
+        // if (_pupilRecord != null)
+        // {
+        //     annotationPublisher.SendAnnotation("Recording started");
+        //     Debug.Log("Pupil Capture is now recording");
+        //     _pupilRecord.StartRecording();
+        // }
+
+        if (_pupilAnnotate != null)
+        {
+            Debug.Log("Pupil Capture is now recording");
+            _pupilRecord.StartRecording();
+            yield return new WaitForSeconds(4f);
+            _pupilAnnotate.SendAnnotation("Recording started");
+        }
+
+        yield return new WaitForSeconds(4f);
+
+        if (enablePupilLab)
+        {
+            _pupilAnnotate.SendAnnotation("Experiment Started");
+        }
+
         while (_spawnedObstacles < totalObstacles)
         {
             ChooseRandomSegment().ActivateSpawner(obstacleSpeed);
             if (enablePupilLab)
             {
-                annotationPublisher.SendAnnotation("Object Spawned");
+                _pupilAnnotate.SendAnnotation("Object Spawned");
             }
             _spawnedObstacles++;
             yield return new WaitForSeconds(spawnDelay);
         }
 
-        if (enablePupilLab)
-        {
-            annotationPublisher.SendAnnotation("Spawning Finished");
-
-        }
-        
         Debug.Log("Spawning Finished.");
 
-        yield return new WaitForSeconds(10f);
-
-        Debug.Log("Experiment has finished, resetting.");
-
-        if (_pupilRecord != null)
+        if (enablePupilLab)
         {
-            Debug.Log("Pupil Capture has stopped recording");
+            _pupilAnnotate.SendAnnotation("Experiment Ended");
+        }
+
+        yield return new WaitForSeconds(4f);
+
+        // Could display on headset that experiment is completed?
+
+        // if (_pupilRecord != null)
+        // {
+        //     annotationPublisher.SendAnnotation("Experiment Ended");
+        //     Debug.Log("Pupil Capture has stopped recording");
+        //     _pupilRecord.StopRecording();
+        // }
+
+        if (_pupilAnnotate != null)
+        {
+            Debug.Log("Pupil Capture is no longer recording");
+            _pupilAnnotate.SendAnnotation("Recording Ended");
+            yield return new WaitForSeconds(4f);
             _pupilRecord.StopRecording();
         }
 
-        // ReturnResults();
+        Debug.Log("Experiment has finished, resetting.");
+
+        // Resets the experiment data to allow new run through
         _spawnedObstacles = 0;
         _running = false;
     }
@@ -181,10 +175,39 @@ public class InterceptionController : MonoBehaviour
         }
     }
 
+    // Handles Pupil Core Recording
+    private void RecordBeginEnd()
+    {
+        if (_pupilRecord != null)
+        {
+            if (!_pupilRecord.IsRecording)
+            {
+
+                Debug.Log("Pupil Capture is now recording");
+                _pupilRecord.StartRecording();
+                _pupilAnnotate.SendAnnotation("Recording started");
+            }
+            else
+            {
+                _pupilAnnotate.SendAnnotation("Recording Ended");
+                Debug.Log("Pupil Capture is no longer recording");
+                _pupilRecord.StopRecording();
+            }
+        }
+    }
+
     // private void ReturnResults()
     // {
     //     float accuracy = _numOfInterception / _numbOfButtonPressed;
     //     Debug.Log($"The user has intercepted {_numOfInterception} out of {totalObstacles} \n with {accuracy.ToString("F2")}");
     // }
 
+    public void Intercepted()
+    {
+        Debug.Log("Object intercepted");
+        if (_pupilAnnotate != null)
+        {
+            _pupilAnnotate.SendAnnotation("Intercepted");
+        }
+    }
 }

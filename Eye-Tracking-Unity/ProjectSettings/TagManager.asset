@@ -7,6 +7,7 @@ TagManager:
   - Marker
   - Obstacle
   - Hit
+  - Interception Controller
   layers:
   - Default
   - TransparentFX
