@@ -1610,7 +1610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7633044714341874283, guid: 1c88817f948aa1a4b8c6a5025624bb1f, type: 3}
       propertyPath: totalObstacles
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7633044714341874283, guid: 1c88817f948aa1a4b8c6a5025624bb1f, type: 3}
       propertyPath: annotationPublisher

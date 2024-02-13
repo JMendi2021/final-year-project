@@ -12,7 +12,6 @@ def plot_gaze_positions(csv_file, annotations_file=None, plot_every=100):
 
     # Calculate angular distance per x and y
     df['angular_distance'] = calculate_angular_distance(df['norm_pos_x'], df['norm_pos_y'])
-
     df_subset = df.iloc[::plot_every, :]
 
     # Plot gaze positions with adjusted timestamps on x-axis and angular distance on y-axis
@@ -26,27 +25,31 @@ def plot_gaze_positions(csv_file, annotations_file=None, plot_every=100):
         spawn_timestamps = annotations_df.loc[annotations_df['label'] == 'Object Spawned', 'timestamp'].values
         interception_timestamps = annotations_df.loc[annotations_df['label'] == 'Intercepted', 'timestamp'].values
 
-                
         start_timestamp = annotations_df.loc[(annotations_df['label'] == 'Experiment Started'), 'timestamp'].values
         end_timestamp = annotations_df.loc[(annotations_df['label'] == 'Experiment Ended'), 'timestamp'].values
 
         # Draw vetical lines to indicate the start and end of an experiment
         plt.axvline(x=start_timestamp, color='black', linestyle='--')
-        plt.text(start_timestamp, plt.ylim()[0] + (plt.ylim()[1] - plt.ylim()[0]) / 2, f'Experiment Started', rotation=90, verticalalignment='center', horizontalalignment='right', color='black')
+        plt.text(start_timestamp, plt.ylim()[0] + (plt.ylim()[1] - plt.ylim()[0]) / 2, 
+                 f'Experiment Started', rotation=90, verticalalignment='center', horizontalalignment='right', color='black')
 
         plt.axvline(x=end_timestamp, color='black', linestyle='--')
-        plt.text(end_timestamp, plt.ylim()[0] + (plt.ylim()[1] - plt.ylim()[0]) / 2, f'Experiment Ended', rotation=90, verticalalignment='center', horizontalalignment='right', color='black')
+        plt.text(end_timestamp, plt.ylim()[0] + (plt.ylim()[1] - plt.ylim()[0]) / 2, 
+                 f'Experiment Ended', rotation=90, verticalalignment='center', horizontalalignment='right', color='black')
 
         # Draw vertical lines for object spawning timestamps
         for timestamp in spawn_timestamps:
             plt.axvline(x=timestamp, color='red', linestyle='--')
-            plt.text(timestamp, plt.ylim()[0] + (plt.ylim()[1] - plt.ylim()[0]) / 2, f'Object spawned on: {timestamp:.2f}', rotation=90, verticalalignment='center', horizontalalignment='right', color='red')
+            plt.text(timestamp, plt.ylim()[0] + (plt.ylim()[1] - plt.ylim()[0]) / 2, 
+                     f'Object spawned on: {timestamp:.2f}', rotation=90, verticalalignment='center', horizontalalignment='right', color='red')
     
         # Draw vertical lines for object spawning timestamps
         for timestamp in interception_timestamps:
             plt.axvline(x=timestamp, color='green', linestyle='--')
-            plt.text(timestamp, plt.ylim()[0] + (plt.ylim()[1] - plt.ylim()[0]) / 2, f'Interception made on: {timestamp:.2f}', rotation=90, verticalalignment='center', horizontalalignment='right', color='green')
+            plt.text(timestamp, plt.ylim()[0] + (plt.ylim()[1] - plt.ylim()[0]) / 2, 
+                     f'Interception made on: {timestamp:.2f}', rotation=90, verticalalignment='center', horizontalalignment='right', color='green')
 
+    # plt.xlim(df_subset['gaze_timestamp'].min(), end_timestamp) # Adjust the scale of the horizontal axis
     
     plt.title('Gaze Angular Distance Over Timestamp')
     plt.xlabel('Timestamp')

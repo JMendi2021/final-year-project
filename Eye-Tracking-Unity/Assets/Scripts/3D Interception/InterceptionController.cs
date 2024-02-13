@@ -94,20 +94,18 @@ public class InterceptionController : MonoBehaviour
         //     _pupilRecord.StartRecording();
         // }
 
-        if (_pupilAnnotate != null)
+        if (enablePupilLab)
         {
             Debug.Log("Pupil Capture is now recording");
             _pupilRecord.StartRecording();
-            yield return new WaitForSeconds(4f);
             _pupilAnnotate.SendAnnotation("Recording started");
+            yield return new WaitForSeconds(2f);
+
+            _pupilAnnotate.SendAnnotation("Experiment Started");
+            
         }
 
         yield return new WaitForSeconds(4f);
-
-        if (enablePupilLab)
-        {
-            _pupilAnnotate.SendAnnotation("Experiment Started");
-        }
 
         while (_spawnedObstacles < totalObstacles)
         {
@@ -122,11 +120,6 @@ public class InterceptionController : MonoBehaviour
 
         Debug.Log("Spawning Finished.");
 
-        if (enablePupilLab)
-        {
-            _pupilAnnotate.SendAnnotation("Experiment Ended");
-        }
-
         yield return new WaitForSeconds(4f);
 
         // Could display on headset that experiment is completed?
@@ -138,11 +131,13 @@ public class InterceptionController : MonoBehaviour
         //     _pupilRecord.StopRecording();
         // }
 
-        if (_pupilAnnotate != null)
+        if (enablePupilLab)
         {
+            _pupilAnnotate.SendAnnotation("Experiment Ended");
+
             Debug.Log("Pupil Capture is no longer recording");
+            yield return new WaitForSeconds(2f);
             _pupilAnnotate.SendAnnotation("Recording Ended");
-            yield return new WaitForSeconds(4f);
             _pupilRecord.StopRecording();
         }
 
