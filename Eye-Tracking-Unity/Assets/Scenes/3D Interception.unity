@@ -367,6 +367,10 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 908591809}
+    - target: {fileID: 5759569962675804801, guid: a9383f0f3aa209a4eb0119d3ad1daa1d, type: 3}
+      propertyPath: showPreview
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5759569962967085356, guid: a9383f0f3aa209a4eb0119d3ad1daa1d, type: 3}
       propertyPath: m_Name
       value: Gaze Tracker
@@ -1475,18 +1479,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: -- XR INTERACTION --
       objectReference: {fileID: 0}
-    - target: {fileID: 495023236038521802, guid: 42130ae50deb12b488fb333b721fe639, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1076575477663542886, guid: 42130ae50deb12b488fb333b721fe639, type: 3}
-      propertyPath: m_CameraYOffset
-      value: 1.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3780532957456213550, guid: 42130ae50deb12b488fb333b721fe639, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5360958530442635595, guid: 42130ae50deb12b488fb333b721fe639, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1525,18 +1517,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5360958530442635595, guid: 42130ae50deb12b488fb333b721fe639, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7986762960285543032, guid: 42130ae50deb12b488fb333b721fe639, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 8331352516202370035, guid: 42130ae50deb12b488fb333b721fe639, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8604610911622295111, guid: 42130ae50deb12b488fb333b721fe639, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1597,25 +1577,37 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7633044714341874283, guid: 1c88817f948aa1a4b8c6a5025624bb1f, type: 3}
+      propertyPath: maxSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633044714341874283, guid: 1c88817f948aa1a4b8c6a5025624bb1f, type: 3}
+      propertyPath: minSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633044714341874283, guid: 1c88817f948aa1a4b8c6a5025624bb1f, type: 3}
       propertyPath: spawnDelay
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7633044714341874283, guid: 1c88817f948aa1a4b8c6a5025624bb1f, type: 3}
       propertyPath: gazeTracker
       value: 
       objectReference: {fileID: 502589677}
     - target: {fileID: 7633044714341874283, guid: 1c88817f948aa1a4b8c6a5025624bb1f, type: 3}
-      propertyPath: enablePupilLab
+      propertyPath: randomSpeed
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7633044714341874283, guid: 1c88817f948aa1a4b8c6a5025624bb1f, type: 3}
-      propertyPath: totalObstacles
-      value: 4
+      propertyPath: obstacleSpeed
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7633044714341874283, guid: 1c88817f948aa1a4b8c6a5025624bb1f, type: 3}
-      propertyPath: annotationPublisher
-      value: 
-      objectReference: {fileID: 502589685}
+      propertyPath: enablePupilLab
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633044714341874283, guid: 1c88817f948aa1a4b8c6a5025624bb1f, type: 3}
+      propertyPath: totalObstacles
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7633044714341874283, guid: 1c88817f948aa1a4b8c6a5025624bb1f, type: 3}
       propertyPath: segments.Array.data[0]
       value: 
@@ -1646,6 +1638,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 243049481}
-  - {fileID: 2120780558}
-  - {fileID: 4942935050321084566}
   - {fileID: 289849817}
+  - {fileID: 4942935050321084566}
+  - {fileID: 2120780558}

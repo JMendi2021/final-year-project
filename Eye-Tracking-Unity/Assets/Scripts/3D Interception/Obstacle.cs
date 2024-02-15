@@ -13,7 +13,8 @@ public class Obstacle : MonoBehaviour
 {
 
     [SerializeField] public float speed;
-    [SerializeField] InputActionReference trigger;
+    [SerializeField] InputActionReference triggerL;
+    [SerializeField] InputActionReference triggerR;
     [SerializeField] Material interceptedMaterial;
     [SerializeField] Renderer targetRenderer;
     // [SerializeField] InterceptionController ic;
@@ -45,7 +46,7 @@ public class Obstacle : MonoBehaviour
     // This performs the logic if an object is within the Interception Zone and the Space or Left Controller Trigger is pressed.
     private void OnMarker()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || trigger.action.triggered)
+        if (Input.GetKeyDown(KeyCode.Space) || triggerL.action.triggered || triggerR.action.triggered)
         {
             Intercepted();
         }

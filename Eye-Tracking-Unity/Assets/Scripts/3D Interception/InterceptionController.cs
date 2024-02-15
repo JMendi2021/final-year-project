@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using PupilLabs;
+using UnityEditor;
 using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.TestTools;
@@ -21,6 +22,11 @@ public class InterceptionController : MonoBehaviour
     [Header("Spawn Settings")]
     [SerializeField] float spawnDelay;
     [SerializeField] int totalObstacles;
+
+    [SerializeField] bool randomSpeed;
+    [SerializeField] float minSpeed;
+    [SerializeField] float maxSpeed;
+
 
     [Header("Pupil Lab")]
     [SerializeField] bool enablePupilLab = true; // This is to test the application without the eye-trackers enabled.
@@ -109,7 +115,12 @@ public class InterceptionController : MonoBehaviour
 
         while (_spawnedObstacles < totalObstacles)
         {
-            ChooseRandomSegment().ActivateSpawner(obstacleSpeed);
+            float speed = obstacleSpeed;
+            if (randomSpeed) {
+                speed = (int)UnityEngine.Random.Range(minSpeed, maxSpeed);
+            }
+
+            ChooseRandomSegment().ActivateSpawner(speed);
             if (enablePupilLab)
             {
                 _pupilAnnotate.SendAnnotation("Object Spawned");

@@ -213,6 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  trigger: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  triggerL: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  triggerR: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   interceptedMaterial: {fileID: 2100000, guid: e0471b940b4605d40b0da6149e84dfc1, type: 2}
   targetRenderer: {fileID: 6112183733839824391}

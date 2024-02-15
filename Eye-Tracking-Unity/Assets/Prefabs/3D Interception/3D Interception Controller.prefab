@@ -55,4 +55,3 @@ MonoBehaviour:
   totalObstacles: 5
   enablePupilLab: 1
   gazeTracker: {fileID: 0}
-  annotationPublisher: {fileID: 0}

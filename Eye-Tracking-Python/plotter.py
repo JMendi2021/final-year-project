@@ -6,7 +6,7 @@ def calculate_angular_distance(x, y):
     # Calculate angular distance using arctangent
     return np.arctan2(y, x)
 
-def plot_gaze_positions(csv_file, annotations_file=None, plot_every=100):
+def plot_gaze_positions(csv_file, annotations_file=None, plot_every=1):
     # Read CSV file with provided file name
     df = pd.read_csv(csv_file)
 
@@ -49,7 +49,7 @@ def plot_gaze_positions(csv_file, annotations_file=None, plot_every=100):
             plt.text(timestamp, plt.ylim()[0] + (plt.ylim()[1] - plt.ylim()[0]) / 2, 
                      f'Interception made on: {timestamp:.2f}', rotation=90, verticalalignment='center', horizontalalignment='right', color='green')
 
-    # plt.xlim(df_subset['gaze_timestamp'].min(), end_timestamp) # Adjust the scale of the horizontal axis
+    plt.xlim(df_subset['gaze_timestamp'].min(), end_timestamp) # Adjust the scale of the horizontal axis
     
     plt.title('Gaze Angular Distance Over Timestamp')
     plt.xlabel('Timestamp')
@@ -64,6 +64,5 @@ def plot_gaze_positions(csv_file, annotations_file=None, plot_every=100):
 if __name__ == "__main__":
     gaze_csv_file = "gaze_positions.csv"
     annotations_csv_file = "annotations.csv"
-    pupil_csv_file = "pupil_positions.csv"
     plot_gaze_positions(gaze_csv_file, annotations_file=annotations_csv_file, plot_every=1)
 
