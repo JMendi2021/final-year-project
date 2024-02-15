@@ -17,11 +17,13 @@ public class Obstacle : MonoBehaviour
     [SerializeField] InputActionReference triggerR;
     [SerializeField] Material interceptedMaterial;
     [SerializeField] Renderer targetRenderer;
+
+    [Header("Interception Zone")]
     // [SerializeField] InterceptionController ic;
 
-    private float _maxSegmentDistance = -2.0f;
-    private float _minMarkerDistance = 2.5f;
-    private float _maxMarkerDistance = 1.0f;
+    [SerializeField] float maxSegmentDistance = -2.0f;
+    [SerializeField] float minMarkerDistance = 2.5f;
+    [SerializeField] float maxMarkerDistance = 1.0f;
 
     private bool _canMove = true;
     private InterceptionController ic;
@@ -55,7 +57,7 @@ public class Obstacle : MonoBehaviour
     // Checks if the object exceeds pass the segment boundry
     private void PassBoundry()
     {
-        if (transform.position.z < _maxSegmentDistance)
+        if (transform.position.z < maxSegmentDistance)
         {
             Destroy(gameObject);
         }
@@ -64,7 +66,7 @@ public class Obstacle : MonoBehaviour
     private void Intercepted()
     {
         Debug.Log("Intercept Button Pressed!");
-        if (transform.position.z > _maxMarkerDistance && transform.position.z < _minMarkerDistance)
+        if (transform.position.z > maxMarkerDistance && transform.position.z < minMarkerDistance)
         {
             targetRenderer.material = interceptedMaterial;
             _canMove = false;
