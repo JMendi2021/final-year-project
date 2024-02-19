@@ -874,8 +874,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacles:
-  - {fileID: 1810168432338972425, guid: b386b4bc704aee24db415b8e658b787a, type: 3}
+  - {fileID: 1810168432338972425, guid: 6502a3d3997ad564b8ee54734028437e, type: 3}
   - {fileID: 6683359224867790814, guid: 5ab89986babdba2448b6a67a4f6164a6, type: 3}
+  xRotation: 0
 --- !u!1 &8018845688633040173
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,8 @@ public class InterceptionController : MonoBehaviour
     // Allows the user to add or remove segments if needed.
     [Header("Segment Settings")]
     [SerializeField] Segment[] segments;
+    [SerializeField] GameObject segmentsObj;
+
     [SerializeField] float obstacleSpeed;
 
     [Header("Spawn Settings")]
@@ -33,10 +35,6 @@ public class InterceptionController : MonoBehaviour
     [SerializeField] GameObject gazeTracker;
 
 
-
-
-
-
     // public int _numOfInterception = 0;
     // public int _numbOfButtonPressed = 0;
     private bool _running = false;
@@ -46,6 +44,7 @@ public class InterceptionController : MonoBehaviour
     private RecordingController _pupilRecord;
     private AnnotationPublisher _pupilAnnotate;
 
+    private bool showSegments = true;
 
 
     private void Start()
@@ -80,12 +79,35 @@ public class InterceptionController : MonoBehaviour
         {
             if (!_running)
             {
-                Debug.Log("Beginning Experiment");
-                RunRandom();
+                if (showSegments)
+                {
+                    Debug.Log("Beginning Experiment");
+                    RunRandom();
+                }
+                else
+                {
+                    Debug.Log("Please ensure the environment is not hidden.");
+                }
             }
             else
             {
                 Debug.Log("Please wait until the current experiment is over.");
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.H))
+        {
+            if (showSegments)
+            {
+                Debug.Log("Hiding Experiment");
+                segmentsObj.SetActive(false);
+                showSegments = false;
+
+            }
+            else
+            {
+                Debug.Log("Showing Experiment");
+                segmentsObj.SetActive(true);
+                showSegments = true;
             }
         }
     }
@@ -108,7 +130,7 @@ public class InterceptionController : MonoBehaviour
             yield return new WaitForSeconds(2f);
 
             _pupilAnnotate.SendAnnotation("Experiment Started");
-            
+
         }
 
         yield return new WaitForSeconds(4f);
@@ -116,7 +138,8 @@ public class InterceptionController : MonoBehaviour
         while (_spawnedObstacles < totalObstacles)
         {
             float speed = obstacleSpeed;
-            if (randomSpeed) {
+            if (randomSpeed)
+            {
                 speed = (int)UnityEngine.Random.Range(minSpeed, maxSpeed);
             }
 
