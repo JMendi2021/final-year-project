@@ -18,6 +18,8 @@ public class Obstacle : MonoBehaviour
     [SerializeField] Material interceptedMaterial;
     [SerializeField] Renderer targetRenderer;
 
+    public int id;
+
     [Header("Interception Zone")]
     // [SerializeField] InterceptionController ic;
 
@@ -70,7 +72,7 @@ public class Obstacle : MonoBehaviour
         {
             targetRenderer.material = interceptedMaterial;
             _canMove = false;
-            ic.Intercepted();
+            ic.Intercepted(id);
             StartCoroutine(DelayDestroy());
         }
     }

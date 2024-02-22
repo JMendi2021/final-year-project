@@ -1,0 +1,9 @@
+index,timestamp,label,duration
+38,7002.020806115417,Interception Line: 40.0113,0.0
+38,7002.02165297821,Experiment Started,0.0
+225,7006.03532485321,Spawned Object 1,0.0
+270,7007.050881188659,Spawned Object 2,0.0
+313,7008.062531274109,Spawned Object 3,0.0
+359,7009.086853783874,Spawned Object 4,0.0
+402,7010.082276147155,Spawned Object 5,0.0
+631,7015.099243920593,Experiment Ended,0.0

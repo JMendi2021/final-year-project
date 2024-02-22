@@ -9,13 +9,16 @@ public class Segment : MonoBehaviour
 
     private SpawnObstacle _spawnObstacle;
 
-    private void Start() {
+    private void Start()
+    {
         _spawnObstacle = spawner.GetComponent<SpawnObstacle>();
-        if (_spawnObstacle == null) {
+        if (_spawnObstacle == null)
+        {
             Debug.LogError("SpawnObstacle Script is not attached to Spawn GameObject");
         }
     }
-    public void ActivateSpawner(float speed) {
-        _spawnObstacle.Spawn(speed);
+    public void ActivateSpawner(float speed, int id)
+    {
+        _spawnObstacle.Spawn(speed, id);
     }
 }

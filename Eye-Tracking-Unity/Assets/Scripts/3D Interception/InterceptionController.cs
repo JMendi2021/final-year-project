@@ -38,6 +38,7 @@ public class InterceptionController : MonoBehaviour
     // public int _numOfInterception = 0;
     // public int _numbOfButtonPressed = 0;
     private bool _running = false;
+    private bool _capturedInterceptionLine = false;
     private int _spawnedObstacles = 0;
 
     // Pupil Lab Private Vars
@@ -49,6 +50,7 @@ public class InterceptionController : MonoBehaviour
 
     private void Start()
     {
+
         if (!enablePupilLab)
         {
             gazeTracker.SetActive(false);
@@ -66,6 +68,7 @@ public class InterceptionController : MonoBehaviour
                 _pupilRecord = gazeTracker.GetComponent<RecordingController>();
                 _pupilAnnotate = gazeTracker.GetComponent<AnnotationPublisher>();
                 Debug.Log("Pupil Lab has been enabled.");
+
             }
         }
     }
@@ -126,9 +129,7 @@ public class InterceptionController : MonoBehaviour
         {
             Debug.Log("Pupil Capture is now recording");
             _pupilRecord.StartRecording();
-            _pupilAnnotate.SendAnnotation("Recording started");
             yield return new WaitForSeconds(2f);
-
             _pupilAnnotate.SendAnnotation("Experiment Started");
 
         }
@@ -142,13 +143,13 @@ public class InterceptionController : MonoBehaviour
             {
                 speed = (int)UnityEngine.Random.Range(minSpeed, maxSpeed);
             }
+            _spawnedObstacles++;
+            ChooseRandomSegment().ActivateSpawner(speed, _spawnedObstacles);
 
-            ChooseRandomSegment().ActivateSpawner(speed);
             if (enablePupilLab)
             {
-                _pupilAnnotate.SendAnnotation("Object Spawned");
+                _pupilAnnotate.SendAnnotation($"Spawned Object {_spawnedObstacles}");
             }
-            _spawnedObstacles++;
             yield return new WaitForSeconds(spawnDelay);
         }
 
@@ -170,8 +171,7 @@ public class InterceptionController : MonoBehaviour
             _pupilAnnotate.SendAnnotation("Experiment Ended");
 
             Debug.Log("Pupil Capture is no longer recording");
-            yield return new WaitForSeconds(2f);
-            _pupilAnnotate.SendAnnotation("Recording Ended");
+            yield return new WaitForSeconds(0.5f);
             _pupilRecord.StopRecording();
         }
 
@@ -231,12 +231,12 @@ public class InterceptionController : MonoBehaviour
     //     Debug.Log($"The user has intercepted {_numOfInterception} out of {totalObstacles} \n with {accuracy.ToString("F2")}");
     // }
 
-    public void Intercepted()
+    public void Intercepted(int id)
     {
         Debug.Log("Object intercepted");
         if (_pupilAnnotate != null)
         {
-            _pupilAnnotate.SendAnnotation("Intercepted");
+            _pupilAnnotate.SendAnnotation($"Intercepted Object {id}");
         }
     }
 }
