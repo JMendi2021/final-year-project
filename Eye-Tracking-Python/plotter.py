@@ -39,15 +39,15 @@ def plot_gaze_positions(csv_file, annotations_file=None, plot_every=1):
 
         # Draw vertical lines for object spawning timestamps
         for timestamp in spawn_timestamps:
-            plt.axvline(x=timestamp, color='red', linestyle='--')
+            plt.axvline(x=timestamp, color='red', linestyle='--', alpha=0.5)
             plt.text(timestamp, plt.ylim()[0] + (plt.ylim()[1] - plt.ylim()[0]) / 2, 
-                     f'Object spawned on: {timestamp:.2f}', rotation=90, verticalalignment='center', horizontalalignment='right', color='red')
+                     f'Object spawned on: {timestamp:.2f}', rotation=90, verticalalignment='center', horizontalalignment='right', color='red', alpha=0.5)
     
         # Draw vertical lines for object spawning timestamps
         for timestamp in interception_timestamps:
-            plt.axvline(x=timestamp, color='green', linestyle='--')
+            plt.axvline(x=timestamp, color='green', linestyle='--', alpha=0.5)
             plt.text(timestamp, plt.ylim()[0] + (plt.ylim()[1] - plt.ylim()[0]) / 2, 
-                     f'Interception made on: {timestamp:.2f}', rotation=90, verticalalignment='center', horizontalalignment='right', color='green')
+                     f'Interception made on: {timestamp:.2f}', rotation=90, verticalalignment='center', horizontalalignment='right', color='green', alpha=0.5)
 
     plt.xlim(df_subset['gaze_timestamp'].min(), end_timestamp) # Adjust the scale of the horizontal axis
     
@@ -64,5 +64,5 @@ def plot_gaze_positions(csv_file, annotations_file=None, plot_every=1):
 if __name__ == "__main__":
     gaze_csv_file = "gaze_positions.csv"
     annotations_csv_file = "annotations.csv"
-    plot_gaze_positions(gaze_csv_file, annotations_file=annotations_csv_file, plot_every=1)
+    plot_gaze_positions(gaze_csv_file, annotations_csv_file, plot_every=1)
 
