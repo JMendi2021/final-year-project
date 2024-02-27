@@ -179,11 +179,10 @@ namespace PupilLabs
             {
                 Debug.DrawRay(origin, direction * hit.distance, Color.red);
 
-                if (hit.collider.CompareTag("Obstacle"))
+                if (hit.collider.CompareTag("Observable"))
                 {
                     //Debug.Log("Obstacle detected.");
-                    hit.collider.gameObject.SendMessage("OnSphereCastHit", SendMessageOptions.DontRequireReceiver);
-
+                    hit.collider.gameObject.SendMessage("OnObserved", SendMessageOptions.DontRequireReceiver);
                 }
 
                 projectionMarker.position = hit.point;

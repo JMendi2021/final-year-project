@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - Hit
   - Interception Controller
+  - Observable
   layers:
   - Default
   - TransparentFX

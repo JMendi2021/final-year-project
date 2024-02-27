@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using PupilLabs;
 using UnityEditor;
 using UnityEditor.Search;
@@ -18,13 +19,11 @@ public class InterceptionController : MonoBehaviour
     [Header("Segment Settings")]
     [SerializeField] Segment[] segments;
     [SerializeField] GameObject segmentsObj;
-
     [SerializeField] float obstacleSpeed;
 
     [Header("Spawn Settings")]
     [SerializeField] float spawnDelay;
     [SerializeField] int totalObstacles;
-
     [SerializeField] bool randomSpeed;
     [SerializeField] float minSpeed;
     [SerializeField] float maxSpeed;
@@ -38,7 +37,6 @@ public class InterceptionController : MonoBehaviour
     // public int _numOfInterception = 0;
     // public int _numbOfButtonPressed = 0;
     private bool _running = false;
-    private bool _capturedInterceptionLine = false;
     private int _spawnedObstacles = 0;
 
     // Pupil Lab Private Vars
@@ -129,7 +127,7 @@ public class InterceptionController : MonoBehaviour
         {
             Debug.Log("Pupil Capture is now recording");
             _pupilRecord.StartRecording();
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
             _pupilAnnotate.SendAnnotation("Experiment Started");
 
         }
@@ -148,23 +146,18 @@ public class InterceptionController : MonoBehaviour
 
             if (enablePupilLab)
             {
-                _pupilAnnotate.SendAnnotation($"Spawned Object {_spawnedObstacles}");
+                Dictionary<string, object> Spawn = new Dictionary<string, object>();
+                Spawn["objectType"] = "Obstacle";
+                Spawn["id"] = _spawnedObstacles;
+
+                _pupilAnnotate.SendAnnotation("Spawning", customData: Spawn);
             }
             yield return new WaitForSeconds(spawnDelay);
         }
 
         Debug.Log("Spawning Finished.");
 
-        yield return new WaitForSeconds(4f);
-
-        // Could display on headset that experiment is completed?
-
-        // if (_pupilRecord != null)
-        // {
-        //     annotationPublisher.SendAnnotation("Experiment Ended");
-        //     Debug.Log("Pupil Capture has stopped recording");
-        //     _pupilRecord.StopRecording();
-        // }
+        yield return new WaitForSeconds(2f);
 
         if (enablePupilLab)
         {
@@ -231,12 +224,32 @@ public class InterceptionController : MonoBehaviour
     //     Debug.Log($"The user has intercepted {_numOfInterception} out of {totalObstacles} \n with {accuracy.ToString("F2")}");
     // }
 
-    public void Intercepted(int id)
+    public void Intercepted(int id, string obj)
     {
-        Debug.Log("Object intercepted");
+        Debug.Log("Obstacle intercepted");
         if (_pupilAnnotate != null)
         {
-            _pupilAnnotate.SendAnnotation($"Intercepted Object {id}");
+            Dictionary<string, object> Intercept = new Dictionary<string, object>();
+            Intercept["objectType"] = obj;
+            Intercept["id"] = id;
+
+            _pupilAnnotate.SendAnnotation("Intercepted", customData: Intercept);
+        }
+    }
+
+    // This function returns that the person is currently observing:
+    // 1. Lane/Marker
+    // 2. Target
+
+    public void LookingAt(int id, string obj)
+    {
+        if (enablePupilLab)
+        {
+            Dictionary<string, object> LookingAt = new Dictionary<string, object>();
+            LookingAt["objectType"] = obj;
+            LookingAt["id"] = id;
+
+            _pupilAnnotate.SendAnnotation("Looking At", customData: LookingAt);
         }
     }
 }

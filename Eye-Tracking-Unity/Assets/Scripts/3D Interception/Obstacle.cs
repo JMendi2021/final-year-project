@@ -29,6 +29,7 @@ public class Obstacle : MonoBehaviour
 
     private bool _canMove = true;
     private InterceptionController ic;
+    private string _objectType = "Obstacle";
 
 
     void Start()
@@ -72,7 +73,7 @@ public class Obstacle : MonoBehaviour
         {
             targetRenderer.material = interceptedMaterial;
             _canMove = false;
-            ic.Intercepted(id);
+            ic.Intercepted(id, _objectType);
             StartCoroutine(DelayDestroy());
         }
     }
@@ -83,4 +84,16 @@ public class Obstacle : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void OnObserved()
+    {
+        Debug.Log($"{_objectType} {id} is observed");
+        ic.LookingAt(id, _objectType);
+    }
+
+    // private void OnCollisionEnter(Collision other)
+    // {
+    //     Debug.Log($"{_objectType} {id} is observed");
+    //     ic.LookingAt(id, _objectType);
+    // }
 }
+
