@@ -739,11 +739,11 @@ MonoBehaviour:
   - {fileID: 1137163973}
   segmentsObj: {fileID: 425967560}
   obstacleSpeed: 3
-  spawnDelay: 1
-  totalObstacles: 5
-  randomSpeed: 0
-  minSpeed: 5
-  maxSpeed: 10
+  spawnDelay: 2
+  totalObstacles: 10
+  randomSpeed: 1
+  minSpeed: 3
+  maxSpeed: 6
   enablePupilLab: 1
   gazeTracker: {fileID: 502589677}
 --- !u!1001 &978545228
@@ -1586,11 +1586,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5360958530442635595, guid: 42130ae50deb12b488fb333b721fe639, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.16
+      value: 7.35
       objectReference: {fileID: 0}
     - target: {fileID: 5360958530442635595, guid: 42130ae50deb12b488fb333b721fe639, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.13
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5360958530442635595, guid: 42130ae50deb12b488fb333b721fe639, type: 3}
       propertyPath: m_LocalRotation.w

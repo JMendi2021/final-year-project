@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -127,7 +128,7 @@ public class InterceptionController : MonoBehaviour
         {
             Debug.Log("Pupil Capture is now recording");
             _pupilRecord.StartRecording();
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(4f);
             _pupilAnnotate.SendAnnotation("Experiment Started");
 
         }
@@ -157,14 +158,14 @@ public class InterceptionController : MonoBehaviour
 
         Debug.Log("Spawning Finished.");
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(5f);
 
         if (enablePupilLab)
         {
             _pupilAnnotate.SendAnnotation("Experiment Ended");
 
             Debug.Log("Pupil Capture is no longer recording");
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(2);
             _pupilRecord.StopRecording();
         }
 
