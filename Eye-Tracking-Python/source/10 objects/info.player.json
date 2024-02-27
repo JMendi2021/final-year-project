@@ -1,12 +1,12 @@
 {
-    "duration_s": 45.19060000000172,
+    "duration_s": 35.166449000000284,
     "meta_version": "2.3",
     "min_player_version": "2.0",
     "recording_name": "C:/Users/jhund/Final Year Project/final-year-project/Eye-Tracking-Unity/2024_02_27",
     "recording_software_name": "Pupil Capture",
     "recording_software_version": "3.5.1",
-    "recording_uuid": "7e7f270a-ed10-4181-b923-7b8a903e3081",
-    "start_time_synced_s": 17325.612788,
-    "start_time_system_s": 1709049415.6861155,
+    "recording_uuid": "c0c35a18-85e2-4d79-986a-aff2a00945df",
+    "start_time_synced_s": 22295.544556,
+    "start_time_system_s": 1709054385.6174595,
     "system_info": "User: jhund, Platform: Windows, Machine: Jhundon, Release: 10, Version: 10.0.19041"
 }
