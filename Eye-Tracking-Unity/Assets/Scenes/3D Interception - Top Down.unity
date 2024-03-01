@@ -363,6 +363,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 289849817}
     m_Modifications:
+    - target: {fileID: 4268978783721493796, guid: a9383f0f3aa209a4eb0119d3ad1daa1d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5759569962675804801, guid: a9383f0f3aa209a4eb0119d3ad1daa1d, type: 3}
       propertyPath: camera
       value: 
@@ -427,12 +431,18 @@ PrefabInstance:
       propertyPath: cameraAsParent
       value: 
       objectReference: {fileID: 6852623236182846215}
+    - target: {fileID: 5759569963728653535, guid: a9383f0f3aa209a4eb0119d3ad1daa1d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5759569964053480823, guid: a9383f0f3aa209a4eb0119d3ad1daa1d, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5759569964053480821, guid: a9383f0f3aa209a4eb0119d3ad1daa1d, type: 3}
+    - {fileID: 5759569963728653535, guid: a9383f0f3aa209a4eb0119d3ad1daa1d, type: 3}
+    - {fileID: 4268978783721493796, guid: a9383f0f3aa209a4eb0119d3ad1daa1d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -646,6 +656,10 @@ PrefabInstance:
       propertyPath: obstacles.Array.data[2]
       value: 
       objectReference: {fileID: 6683359224867790814, guid: 5ab89986babdba2448b6a67a4f6164a6, type: 3}
+    - target: {fileID: 6023851308060674980, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
+      propertyPath: segmentID
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8936728667928512831, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
       propertyPath: m_Name
       value: Segment 2
@@ -826,6 +840,10 @@ PrefabInstance:
       propertyPath: obstacles.Array.data[2]
       value: 
       objectReference: {fileID: 6683359224867790814, guid: 5ab89986babdba2448b6a67a4f6164a6, type: 3}
+    - target: {fileID: 6023851308060674980, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
+      propertyPath: segmentID
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8936728667928512831, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
       propertyPath: m_Name
       value: Segment 3
@@ -1005,6 +1023,10 @@ PrefabInstance:
       propertyPath: obstacles.Array.data[2]
       value: 
       objectReference: {fileID: 6683359224867790814, guid: 5ab89986babdba2448b6a67a4f6164a6, type: 3}
+    - target: {fileID: 6023851308060674980, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
+      propertyPath: segmentID
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8936728667928512831, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
       propertyPath: m_Name
       value: Segment 5
@@ -1336,6 +1358,10 @@ PrefabInstance:
       propertyPath: obstacles.Array.data[3]
       value: 
       objectReference: {fileID: 6683359224867790814, guid: 5ab89986babdba2448b6a67a4f6164a6, type: 3}
+    - target: {fileID: 6023851308060674980, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
+      propertyPath: segmentID
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8936728667928512831, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
       propertyPath: m_Name
       value: Segment 4
@@ -1548,6 +1574,10 @@ PrefabInstance:
       propertyPath: obstacles.Array.data[2]
       value: 
       objectReference: {fileID: 6683359224867790814, guid: 5ab89986babdba2448b6a67a4f6164a6, type: 3}
+    - target: {fileID: 6023851308060674980, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
+      propertyPath: segmentID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8936728667928512831, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
       propertyPath: m_Name
       value: Segment 1
@@ -1590,7 +1620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5360958530442635595, guid: 42130ae50deb12b488fb333b721fe639, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: 2.14
       objectReference: {fileID: 0}
     - target: {fileID: 5360958530442635595, guid: 42130ae50deb12b488fb333b721fe639, type: 3}
       propertyPath: m_LocalRotation.w

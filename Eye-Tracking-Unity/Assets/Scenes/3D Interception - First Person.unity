@@ -285,6 +285,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 289849817}
     m_Modifications:
+    - target: {fileID: 4268978783721493796, guid: a9383f0f3aa209a4eb0119d3ad1daa1d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5759569962675804801, guid: a9383f0f3aa209a4eb0119d3ad1daa1d, type: 3}
       propertyPath: camera
       value: 
@@ -349,9 +353,13 @@ PrefabInstance:
       propertyPath: cameraAsParent
       value: 
       objectReference: {fileID: 6852623236182846215}
+    - target: {fileID: 5759569963728653535, guid: a9383f0f3aa209a4eb0119d3ad1daa1d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5759569964053480823, guid: a9383f0f3aa209a4eb0119d3ad1daa1d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5759569964053480821, guid: a9383f0f3aa209a4eb0119d3ad1daa1d, type: 3}
@@ -536,6 +544,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6023851308060674980, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
+      propertyPath: segmentID
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8936728667928512831, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
       propertyPath: m_Name
       value: Segment 2
@@ -708,7 +720,7 @@ MonoBehaviour:
   randomSpeed: 1
   minSpeed: 5
   maxSpeed: 15
-  enablePupilLab: 0
+  enablePupilLab: 1
   gazeTracker: {fileID: 502589677}
 --- !u!1001 &978545228
 PrefabInstance:
@@ -757,6 +769,10 @@ PrefabInstance:
     - target: {fileID: 3311248420355129495, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023851308060674980, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
+      propertyPath: segmentID
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8936728667928512831, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
       propertyPath: m_Name
@@ -846,6 +862,10 @@ PrefabInstance:
     - target: {fileID: 3311248420355129495, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023851308060674980, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
+      propertyPath: segmentID
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8936728667928512831, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
       propertyPath: m_Name
@@ -1116,6 +1136,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6023851308060674980, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
+      propertyPath: segmentID
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8936728667928512831, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
       propertyPath: m_Name
       value: Segment 4
@@ -1264,6 +1288,10 @@ PrefabInstance:
     - target: {fileID: 3311248420355129495, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023851308060674980, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
+      propertyPath: segmentID
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8936728667928512831, guid: 099e284a462f44d47ae572bb9afd9f7a, type: 3}
       propertyPath: m_Name

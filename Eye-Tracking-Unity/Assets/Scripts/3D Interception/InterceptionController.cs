@@ -253,4 +253,17 @@ public class InterceptionController : MonoBehaviour
             _pupilAnnotate.SendAnnotation("Looking At", customData: LookingAt);
         }
     }
+
+    public void LookingAt(int id, string obj, int segm_id)
+    {
+        if (enablePupilLab)
+        {
+            Dictionary<string, object> LookingAt = new Dictionary<string, object>();
+            LookingAt["objectType"] = obj;
+            LookingAt["id"] = id;
+            LookingAt["segmentLocation"] = segm_id;
+
+            _pupilAnnotate.SendAnnotation("Looking At", customData: LookingAt);
+        }
+    }
 }

@@ -18,8 +18,6 @@ public class Obstacle : MonoBehaviour
     [SerializeField] Material interceptedMaterial;
     [SerializeField] Renderer targetRenderer;
 
-    public int id;
-
     [Header("Interception Zone")]
     // [SerializeField] InterceptionController ic;
 
@@ -27,9 +25,14 @@ public class Obstacle : MonoBehaviour
     [SerializeField] float minMarkerDistance = 2.5f;
     [SerializeField] float maxMarkerDistance = 1.0f;
 
+    
+    public int segm_id;
+    public int id;
     private bool _canMove = true;
     private InterceptionController ic;
     private string _objectType = "Obstacle";
+
+
 
 
     void Start()
@@ -87,13 +90,7 @@ public class Obstacle : MonoBehaviour
     private void OnObserved()
     {
         Debug.Log($"{_objectType} {id} is observed");
-        ic.LookingAt(id, _objectType);
+        ic.LookingAt(id, _objectType, segm_id);
     }
-
-    // private void OnCollisionEnter(Collision other)
-    // {
-    //     Debug.Log($"{_objectType} {id} is observed");
-    //     ic.LookingAt(id, _objectType);
-    // }
 }
 
