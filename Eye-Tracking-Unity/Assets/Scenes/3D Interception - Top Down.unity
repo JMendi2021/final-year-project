@@ -753,11 +753,11 @@ MonoBehaviour:
   - {fileID: 1137163973}
   segmentsObj: {fileID: 425967560}
   obstacleSpeed: 3
-  spawnDelay: 2
-  totalObstacles: 10
+  spawnDelay: 1.5
+  totalObstacles: 15
   randomSpeed: 1
-  minSpeed: 3
-  maxSpeed: 6
+  minSpeed: 5
+  maxSpeed: 15
   enablePupilLab: 1
   gazeTracker: {fileID: 502589677}
 --- !u!1001 &978545228

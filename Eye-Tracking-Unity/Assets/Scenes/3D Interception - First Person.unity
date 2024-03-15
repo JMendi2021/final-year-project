@@ -363,6 +363,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5759569964053480821, guid: a9383f0f3aa209a4eb0119d3ad1daa1d, type: 3}
+    - {fileID: 5759569963728653535, guid: a9383f0f3aa209a4eb0119d3ad1daa1d, type: 3}
+    - {fileID: 4268978783721493796, guid: a9383f0f3aa209a4eb0119d3ad1daa1d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -715,8 +717,8 @@ MonoBehaviour:
   - {fileID: 1137163973}
   segmentsObj: {fileID: 425967560}
   obstacleSpeed: 6
-  spawnDelay: 2
-  totalObstacles: 20
+  spawnDelay: 1.5
+  totalObstacles: 15
   randomSpeed: 1
   minSpeed: 5
   maxSpeed: 15

@@ -93,9 +93,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1615638067681570056}
   - component: {fileID: 1386145985495207390}
+  - component: {fileID: 3111815222917150530}
   m_Layer: 0
   m_Name: Target - First Person
-  m_TagString: Obstacle
+  m_TagString: Observable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,10 +135,34 @@ MonoBehaviour:
   triggerR: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   interceptedMaterial: {fileID: 2100000, guid: e0471b940b4605d40b0da6149e84dfc1, type: 2}
   targetRenderer: {fileID: 8982184840335583120}
-  id: 0
   maxSegmentDistance: -2
   minMarkerDistance: 2.4
   maxMarkerDistance: 0.3
+  segm_id: 0
+  id: 0
+--- !u!136 &3111815222917150530
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810168432338972425}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &2399562281643026018
 GameObject:
   m_ObjectHideFlags: 0

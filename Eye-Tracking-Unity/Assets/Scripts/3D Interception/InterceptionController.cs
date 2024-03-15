@@ -128,12 +128,9 @@ public class InterceptionController : MonoBehaviour
         {
             Debug.Log("Pupil Capture is now recording");
             _pupilRecord.StartRecording();
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(2f);
             _pupilAnnotate.SendAnnotation("Experiment Started");
-
         }
-
-        yield return new WaitForSeconds(4f);
 
         while (_spawnedObstacles < totalObstacles)
         {
