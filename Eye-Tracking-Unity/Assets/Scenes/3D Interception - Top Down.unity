@@ -756,8 +756,8 @@ MonoBehaviour:
   spawnDelay: 1.5
   totalObstacles: 15
   randomSpeed: 1
-  minSpeed: 5
-  maxSpeed: 15
+  minSpeed: 10
+  maxSpeed: 20
   enablePupilLab: 1
   gazeTracker: {fileID: 502589677}
 --- !u!1001 &978545228

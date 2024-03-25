@@ -1,0 +1,26 @@
+index,timestamp,label,duration,ObjectSpeed,id,objectType
+26,7978.162885575256,Recording Ended,0.0,,,
+146,7982.163457779846,Experiment Started,0.0,,,
+146,7982.170543580017,Spawning,0.0,,1,Obstacle
+184,7983.685542969665,Spawning,0.0,,2,Obstacle
+224,7985.211992173156,Spawning,0.0,,3,Obstacle
+239,7985.767749695739,Intercepted,0.0,18.0,3,Obstacle
+266,7986.7362708139035,Spawning,0.0,,4,Obstacle
+303,7988.281276612243,Spawning,0.0,,5,Obstacle
+342,7989.783283143005,Spawning,0.0,,6,Obstacle
+382,7991.316471009216,Spawning,0.0,,7,Obstacle
+398,7991.933128266296,Intercepted,0.0,17.0,7,Obstacle
+423,7992.835853486023,Spawning,0.0,,8,Obstacle
+438,7993.46968832489,Intercepted,0.0,15.0,8,Obstacle
+463,7994.369666962585,Spawning,0.0,,9,Obstacle
+481,7995.10311499115,Intercepted,0.0,15.0,9,Obstacle
+503,7995.902004151306,Spawning,0.0,,10,Obstacle
+541,7997.4154700326535,Spawning,0.0,,11,Obstacle
+580,7998.945129303894,Spawning,0.0,,12,Obstacle
+620,8000.449203400573,Spawning,0.0,,13,Obstacle
+634,8001.020088105163,Intercepted,0.0,18.0,13,Obstacle
+661,8001.984779267273,Spawning,0.0,,14,Obstacle
+678,8002.649894623718,Intercepted,0.0,16.0,14,Obstacle
+701,8003.486133484802,Spawning,0.0,,15,Obstacle
+886,8010.032211213073,Experiment Ended,0.0,,,
+941,8012.035373597107,Recording Ended,0.0,,,
