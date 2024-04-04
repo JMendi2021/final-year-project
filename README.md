@@ -8,7 +8,7 @@
 
 ---
 
-Due to the GitLab push limit of 400mb, a private GitHub repository (this) has been made to record history and code access.
+Due to the GitLab push limit of 400mb, a [GitHub repository](https://github.com/JMendi2021/final-year-project) has been made to record history and code access.
 
 There are a total of **four executable files** in this project, each linking to their corresponding section to how to run them, these are:
 
