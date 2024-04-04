@@ -20,11 +20,12 @@ public class InterceptionController : MonoBehaviour
     [Header("Segment Settings")]
     [SerializeField] Segment[] segments;
     [SerializeField] GameObject segmentsObj;
-    [SerializeField] float obstacleSpeed;
+    
 
     [Header("Spawn Settings")]
     [SerializeField] float spawnDelay;
     [SerializeField] int totalObstacles;
+    [SerializeField] float obstacleSpeed;
     [SerializeField] bool randomSpeed;
     [SerializeField] float minSpeed;
     [SerializeField] float maxSpeed;
