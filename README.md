@@ -17,7 +17,10 @@ There are a total of **four executable files** in this project, each linking to 
 3. [Gaze Visualiser](#using-gaze-visualiser) (Jupyter Notebook)
 4. [Pupillometry](#using-pupillometry) (Jupyter Notebook)
 
-Before using the Jupyter Notebooks, you will need to [process the recording](#using-pupil-player).
+Before using the Jupyter Notebooks, you will need to [process the recording](#using-pupil-player) and the following libraries installed using the commands
+- `pip install pandas`
+- `pip install matplotlib`
+- `pip install numpy`
 
 ## 3D/2D Object Interception with Eye Tracking
 To run this experiment, with Pupil Core, you will require the following:
